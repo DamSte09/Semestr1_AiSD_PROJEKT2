@@ -7,20 +7,26 @@
 using namespace std;
 
 //liczba elementow
-const int N=15;
+const int N=10;
 
 //Tworzenie zioru i wypelnianie go liczbami pseudolosowymi 0-10
-void zbior(int d[])
+void zbior(int tab[])
 {
+	cout<<"\nPrzed sortowaniem:\n\n";
 	srand((unsigned)time(NULL));
-	for(int i=1; i<=N; i++) d[i]=rand()%10;
+	for(int i=1; i<=N; i++) 
+	{
+		tab[i]=rand()%10;
+		cout << setw(2) << tab[i];
+	}
+	cout<<endl;
 }
 
 //Budowanie kopca
 void building_heap(int d[])
 {
 	int	i, j, k, x;
-	for(int i=2; i<=N; i++)
+	for(int i=1; i<=N; i++)
 	{
 		j=i; k=j/2;
 	    x=d[i];
@@ -57,18 +63,18 @@ void demoliting_heap(int d[])
 
 int main()
 {
-	cout<<"Algorytm sortowania kopcowego\n";
 	
 	int d[N+1];
-
 	zbior(d);
+	cout << endl;
+	cout<<"Algorytm sortowania kopcowego\n";
 	building_heap(d);
 	demoliting_heap(d);
-	
 	cout << endl << "Po sortowaniu:\n\n";
-  
 	for(int i = 1; i <= N; i++) cout << setw(2) << d[i];
+	
 
+	
 	//Gotowe
 	cout << endl << endl;
 	return 0;
