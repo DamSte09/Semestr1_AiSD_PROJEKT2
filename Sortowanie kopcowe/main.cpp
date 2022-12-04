@@ -65,9 +65,6 @@ void heapSort(int arr[], int N)
         heapify(arr, i, 0);
     }
 }
-<<<<<<< Updated upstream
-
-=======
  
 // Funkcja do wypisywania posortowanej tablicy n wymiarowej
 void printArray(int arr[], int N)
@@ -76,29 +73,10 @@ void printArray(int arr[], int N)
         cout << setw(2) << arr[i];
     cout << endl;
 }
->>>>>>> Stashed changes
 
 
 int main()
 {
-<<<<<<< Updated upstream
-	
-	int d[N+1];
-	zbior(d);
-	cout << endl;
-	cout<<"Algorytm sortowania kopcowego\n";
-	building_heap(d);
-	demoliting_heap(d);
-	cout << endl << "Po sortowaniu:\n\n";
-	for(int i = 1; i <= N; i++) cout << setw(2) << d[i];
-	
-
-	
-	//Gotowe
-	cout << endl << endl;
-	return 0;
-}
-=======
 	int n;
 	cout<<"Podaj rozmiar tablicy ktora bedzie wylosowana: ";
 	cin>>n;
@@ -111,4 +89,3 @@ int main()
     printArray(arr, n);
     return 0;
 }
->>>>>>> Stashed changes
