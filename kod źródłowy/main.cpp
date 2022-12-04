@@ -60,21 +60,39 @@ void demoliting_heap(int d[])
 	}
 }
 
+void combSort(int* tab, int size)
+{
+   int gap = size, tmp;
+   bool swapped = true;
+   while (gap > 1 || swapped){ // jeśli gap = 1 i nie dokonano zamiany - wyjście z pętli     
+      gap = gap * 10 / 13;
+      if(gap==0)
+            gap=1;
+      swapped = false;
+      for ( int i = 0; i + gap < size; ++i ) { // wykonuj od 0 do ostatniego elementu tablicy
+         if ( tab[i + gap] < tab[i] ) {   // porównanie elementów odległych o rozpiętość
+            tmp = tab[i];                 // zamiana elementów
+            tab[i] = tab[i + gap];
+            tab[i + gap] = tmp;
+            swapped = true;
+           }
+      }
+   }
+}
 
 int main()
 {
 	
-	int d[N+1];
-	zbior(d);
+	int tab[N+1];
+	zbior(tab);
 	cout << endl;
 	cout<<"Algorytm sortowania kopcowego\n";
-	building_heap(d);
-	demoliting_heap(d);
+	building_heap(tab);
+	demoliting_heap(tab);
 	cout << endl << "Po sortowaniu:\n\n";
-	for(int i = 1; i <= N; i++) cout << setw(2) << d[i];
+	for(int i = 1; i <= N; i++) cout << setw(2) << tab[i];
 	
 
-	
 	//Gotowe
 	cout << endl << endl;
 	return 0;
