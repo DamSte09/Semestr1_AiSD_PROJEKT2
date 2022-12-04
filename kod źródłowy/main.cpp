@@ -92,7 +92,12 @@ int main()
 	cout << endl << "Po sortowaniu:\n\n";
 	for(int i = 1; i <= N; i++) cout << setw(2) << tab[i];
 	
-
+	cout<<endl<<endl;
+	cout<<"Algorytm sortowania grzebieniowego\n";
+	combSort(tab, N);
+	cout << endl << "Po sortowaniu:\n\n";
+	for(int i = 1; i <= N; i++) cout << setw(2) << tab[i];
+	
 	//Gotowe
 	cout << endl << endl;
 	return 0;
