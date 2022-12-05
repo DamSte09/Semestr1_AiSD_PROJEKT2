@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <cstdlib>
-#include <sys/time.h>
+#include <time.h>
 #include <iomanip>
 
 using namespace std;
@@ -79,10 +79,12 @@ int main()
 	cout<<"Podaj rozmiar tablicy ktora bedzie wylosowana: ";
 	cin>>n;
     int arr[n];
+    // Losowanie tablicy
  	randArray(arr, n);
     // Wywolanie funkcji heapSort
     heapSort(arr, n);
     cout << "Po sortowaniu\n";
+    //Wypisanie posortowanej tablicy
     printArray(arr, n);
     return 0;
 }
