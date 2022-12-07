@@ -8,7 +8,7 @@ using namespace std;
 
 
 //Tworzenie tablicy oraz wypisywanie jej
-void inputArray(int arr[], long int size) {
+void inputArray(int arr[], int size) {
 	//cout<<"Przed sortowaniem:\n";
 	fstream inFile;
 	inFile.open("tablica.txt");
@@ -17,7 +17,7 @@ void inputArray(int arr[], long int size) {
 	for(int i=0; i<size; i++) {
 		//arr[i]=rand()%1000;	//wypelnianie jej liczbami pseudolosowymi od 0 do 1000
 		inFile>>arr[i];
-		cout << setw(2) << arr[i];
+		cout << setw(5) << arr[i];
 	}
 	cout<<endl;
 	inFile.close();
@@ -67,7 +67,7 @@ void printArray(int arr[], int size) {
     for (int i=0; i<size; i++)
     {
         cout << setw(5) << arr[i];
-        //wyjscie<< arr[i]<<" ";
+        wyjscie<< arr[i]<<" ";
     }
     cout << endl;
     wyjscie.close();
@@ -78,8 +78,9 @@ int main() {
 	clock_t start, stop;
 	double czas;
 	int n;
-	cout<<"Podaj rozmiar losowanej: ";
+	cout<<"Podaj rozmiar wprowadzonej tablicy: ";
 	cin>>n;
+	cout<<endl;
     int arr[n];
     // Losowanie tablicy
  	inputArray(arr, n);
@@ -91,6 +92,6 @@ int main() {
     cout << "Po sortowaniu\n";
     //Wypisanie posortowanej tablicy
     printArray(arr, n);
-    //printf("%.30f", czas);
+    printf("Czas: %.30f", czas);
     return 0;
 }
