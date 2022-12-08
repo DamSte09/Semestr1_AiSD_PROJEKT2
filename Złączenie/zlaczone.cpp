@@ -4,32 +4,33 @@
 #include <time.h>
 #include <iomanip>
 #include <fstream>
+
 using namespace std;
 
 
 //Tworzenie tablicy oraz wypisywanie jej
 void inputArray(int arr[],int tab[], int size) {
-	//cout<<"Przed sortowaniem:\n";
-	//fstream inFile;
-	//inFile.open("tablica.txt");
-	
+	cout<<"Przed sortowaniem:\n";
+	fstream inFile;
+	inFile.open("tablica.txt");
+
 	//srand((unsigned)time(NULL));
 	//for(int i=size-1; i>=0; i--) {
 	for(int i=0; i<size; i++) {
 		//arr[i]=rand()%1000;	//wypelnianie jej liczbami pseudolosowymi od 0 do 1000
-		//inFile>>arr[i];
-		//if(i<size/2){
+		inFile>>arr[i];
+		//if(i>size/2){
 		//arr[i]=i;
-		//tab[i]=arr[i];
+		tab[i]=arr[i];
 		//}
 		//else {
 		//	arr[i]=rand()%1000;
 		//tab[i]=arr[i];
-	//	}
-		//cout << setw(5) << arr[i];
+		//}
+		cout << setw(5) << arr[i];
 	}
 	cout<<endl;
-	//inFile.close();
+	inFile.close();
 }
 
 // Ulozenie poddrzewa zakorzenionego w wezle i
@@ -100,9 +101,11 @@ void printArray(int arr[],int tab[], int size, double czas1, double czas2) {
 	ofstream wyjscie1, wyjscie2;
 	wyjscie1.open("wyjscie1.txt");
 	wyjscie2.open("wyjscie2.txt");
+	
+	cout<<"Po sortowaniu: \n";
     for (int i=0; i<size; i++)
     {
-        //cout << setw(5) << arr[i];
+        cout << setw(5) << arr[i];
         wyjscie1<< arr[i]<<" ";
     }
     cout << endl;
@@ -112,9 +115,9 @@ void printArray(int arr[],int tab[], int size, double czas1, double czas2) {
         wyjscie2<< tab[i]<<" ";
     }
     cout << endl;
-    wyjscie1<< "\nCzas: "<<czas1<<" s";
+    //wyjscie1<< "\nCzas: "<<czas1<<" s";
     putchar('\n');
-    wyjscie2<< "\nCzas: "<< czas2<<" s";
+    //wyjscie2<< "\nCzas: "<< czas2<<" s";
     wyjscie1.close();
     wyjscie2.close();
 }
